@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>We Love Basketball</title>
+    <link rel="icon" type="image/png" href="images/pagina-icono.png" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/skel.min.js"></script>
+    <script type="text/javascript" src="js/skel-layers.min.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/cargarTabla.js"></script>
+    <noscript>
+      <link type="text/css" rel="stylesheet" href="css/skel.css" />
+      <link type="text/css" rel="stylesheet" href="css/style.css" />
+      <link type="text/css" rel="stylesheet" href="css/style-desktop.css" />
+    </noscript>
+    <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
+    <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+  </head>
+  <body class="subpage">
+  
+    <!-- Header -->
+      <div id="header-wrapper">
+        <header id="header" class="container">
+          <div class="row">
+            <div class="12u">
+
+              <!-- Logo -->
+                <h1><a href="/" id="logo">We Love Basketball</a></h1>
+                <img id="imagen" src="images/icono-girar.png">
+              
+              <!-- Nav -->
+                <nav id="nav">
+                  <a href="/">Inicio</a>
+                  <a href="/formulario">Formulario</a>
+                  <a href="/estIndividuales">Estadísticas 2013-14</a>
+                  <a href="/resultados">Resultados</a>
+                  <a href="/contacto">Contacto</a>
+                </nav>
+
+            </div>
+          </div>
+        </header>
+      </div>
+
+    <!-- Content -->
+      <div id="content-wrapper">
+        <div id="content">
+          <div class="container">
+            <div class="row">
+              <div class="12u">             
+                <!-- Main Content -->
+                  <section>
+                    <header>
+                      <h2>Resultados</h2>
+                      <h3>Tabla con todas las valoraciones realizadas</h3>
+                    </header>
+                    <table id="tablaResultados" class="display" cellspacing="0" width="100%">
+                          <thead>
+                              <tr>
+                                  <th>Nombre</th>
+                                  <th>Apellido</th>
+                                  <th>Equipo</th>
+                                  <th>Posición</th>
+                                  <th>Edad</th>
+                                  <th>Estilo</th>
+                              </tr>
+                          </thead>
+                   
+                          <tfoot>
+                              <tr>
+                                  <th>Nombre</th>
+                                  <th>Apellido</th>
+                                  <th>Equipo</th>
+                                  <th>Posición</th>
+                                  <th>Edad</th>
+                                  <th>Estilo</th>
+                              </tr>
+                          </tfoot>
+                   
+                          <tbody>
+                            <% for(var i=0; i<nombres.length; i++) { %>
+                                <tr>
+                                    <td>
+                                        <%= nombres[i] %>
+                                    </td>
+                                    <td>
+                                        <%= apellidos[i] %>
+                                    </td>
+                                    <td>
+                                        <%= equipos[i] %>
+                                    </td>
+                                    <td>
+                                        <%= posiciones[i] %>
+                                    </td>
+                                    <td>
+                                        <%= edades[i] %>
+                                    </td>
+                                    <td>
+                                        <%= estilos[i] %>
+                                    </td>
+                                </tr>
+                            <% } %>
+                          </tbody>
+                      </table>
+                  </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Footer -->
+      <div id="footer-wrapper">
+        <footer id="footer" class="container">
+          <div class="row">
+            <div class="8u">
+            
+              <!-- Links -->
+                <section>
+                  <h2>Links relacionados con la NBA</h2>
+                  <div>
+                    <div class="row">
+                      <div class="3u">
+                        <ul class="link-list last-child">
+                          <li><a href="http://www.nba.com" target="_blank">Página oficial</a></li>
+                          <li><a href="http://www.nbastore.eu/stores/nba/default.aspx" target="_blank">Tienda oficial</a></li>
+                          <li><a href="http://watch.nba.com/nba/" target="_blank">NBA Tv</a></li>
+                          <li><a href="http://es.wikipedia.org/wiki/National_Basketball_Association" target="_blank">Wikipedia NBA</a></li>
+                        </ul>
+                      </div>
+                      <div class="3u">
+                        <ul class="link-list last-child">
+                          <li><a href="http://www.marca.com/baloncesto/nba.html" target="_blank">Marca NBA</a></li>
+                          <li><a href="http://www.espndeportes.com/basquetbol/" target="_blank">ESPN NBA</a></li>
+                          <li><a href="http://www.nbamaniacs.com/" target="_blank">NBAManiacs</a></li>
+                          <li><a href="http://www.ultimatenba.com/" target="_blank">UltimateNBA</a></li>
+                        </ul>
+                      </div>
+                      <div class="3u">
+                        <ul class="link-list last-child">
+                          <li><a href="https://twitter.com/nba" target="_blank">Twitter NBA</a></li>
+                          <li><a href="https://www.facebook.com/nba" target="_blank">Facebook NBA</a></li>
+                          <li><a href="http://instagram.com/nba/" target="_blank">Instagram NBA</a></li>
+                          <li><a href="https://www.youtube.com/user/NBA" target="_blank">Youtube NBA</a></li>
+                        </ul>
+                      </div>
+                      <div class="3u">
+                        <ul class="link-list last-child">
+                          <li><a href="http://www.nike.com/es/es_es/" target="_blank">Nike</a></li>
+                          <li><a href="http://www.adidas.es/" target="_blank">Adidas</a></li>
+                          <li><a href="http://shop.spalding.com/" target="_blank">Spalding</a></li>
+                          <li><a href="http://www.footlocker.com/" target="_blank">Foot Locker</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+            </div>
+            <div class="4u">
+              
+              <!-- About us -->
+                <section>
+                  <h2>Un breve texto informativo</h2>
+                  <p align="justify">
+                    <strong>We Love Basketball</strong> es una iniciativa llevada a cabo por un estudiante de la Universidad de Deusto llamado <strong>Endika Salgueiro</strong>. El objetivo y fin de esta página web es el de disfrutar y conocer un poco más la NBA. A través de esta página, los visitantes podrán acceder a estadístivas individuales de los jugadores, elegir sus jugadores favoritos y ver las valoracines de otros visitantes de una forma ordenada.
+                  </p>
+                </section>
+            
+            </div>
+          </div>
+        </footer>
+      </div>
+
+    <!-- Copyright -->
+      <div id="copyright">
+        &copy; EndikaSalgueiro2014. All rights reserved.
+      </div>
+
+  </body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>We Love Basketball</title>
+		<link rel="icon" type="image/png" href="images/pagina-icono.png" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/skel.min.js"></script>
+		<script type="text/javascript" src="js/skel-layers.min.js"></script>
+		<script type="text/javascript" src="js/init.js"></script>
+		<noscript>
+			<link type="text/css" rel="stylesheet" href="css/skel.css" />
+			<link type="text/css" rel="stylesheet" href="css/style.css" />
+			<link type="text/css" rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+	</head>
+	<body class="subpage">
+	
+		<!-- Header -->
+			<div id="header-wrapper">
+				<header id="header" class="container">
+					<div class="row">
+						<div class="12u">
+
+							<!-- Logo -->
+								<h1><a href="/" id="logo">We Love Basketball</a></h1>
+								<img id="imagen" src="images/icono-girar.png">
+							
+							<!-- Nav -->
+								<nav id="nav">
+									<a href="/">Inicio</a>
+									<a href="/formulario">Formulario</a>
+									<a href="/estIndividuales">Estadísticas 2013-14</a>
+									<a href="/resultados">Resultados</a>
+									<a href="/contacto">Contacto</a>
+								</nav>
+
+						</div>
+					</div>
+				</header>
+			</div>
+
+		<!-- Content -->
+			<div id="content-wrapper">
+				<div id="content">
+					<div class="container">
+						<div class="row">
+							<div class="12u">
+							
+								<!-- Main Content -->
+									<section>
+										<header>
+											<h2>Formulario</h2>
+											<h3>Rellena el formulario y dínos quien es tu jugador favorito</h3>
+										</header>
+										<form method="post" enctype="multipart/form-data" action="/insertarJugador" onsubmit="return validacion()">
+											Nombre:<br>
+											<input class="anchuraMaxima" type="text" name="nombre" id="nombre">
+											<br>
+											Apellido:<br>
+											<input class="anchuraMaxima" type="text" name="apellido" id="apellido">
+											<br>
+											Equipo:<br>
+											<select class="anchuraMaxima" name="equipo" id="equipos">
+												<option value="" selected="selected">- Selecciona un equipo -</option>
+												<option value="Atlanta Hawks">Atlanta Hawks</option>
+												<option value="Boston Celtics">Boston Celtics</option>
+												<option value="Brooklin Nets">Brooklin Nets</option>
+												<option value="Charlotte Hornets">Charlotte Hornets</option>
+												<option value="Chicago Bulls">Chicago Bulls</option>
+												<option value="Cleveland Cavaliers">Cleveland Cavaliers</option>
+												<option value="Dallas Mavericks">Dallas Mavericks</option>
+												<option value="Denver Nuggets">Denver Nuggets</option>
+												<option value="Detroit Pistons">Detroit Pistons</option>
+												<option value="Golden State Warriors">Golden State Warriors</option>
+												<option value="Houston Rockets">Houston Rockets</option>
+												<option value="Indiana Pacers">Indiana Pacers</option>
+												<option value="Los Angeles Clippers">Los Angeles Clippers</option>
+												<option value="Los Angeles Lakers">Los Angeles Lakers</option>
+												<option value="Memphis Grizzlies">Memphis Grizzlies</option>
+												<option value="Miami Heat">Miami Heat</option>
+												<option value="Milwaukee Bucks">Milwaukee Bucks</option>
+												<option value="Minnesota Timberwolves">Minnesota Timberwolves</option>
+												<option value="New Orleans Pelicans">New Orleans Pelicans</option>
+												<option value="New York Knicks">New York Knicks</option>
+												<option value="Oklahoma City Thunder">Oklahoma City Thunder</option>
+												<option value="Orlando Magic">Orlando Magic</option>
+												<option value="Philadelphia 76ers">Philadelphia 76ers</option>
+												<option value="Phoenix Suns">Phoenix Suns</option>
+												<option value="Portland Trail Blazers">Portland Trail Blazers</option>
+												<option value="Sacramento Kings">Sacramento Kings</option>
+												<option value="San Antonio Spurs">San Antonio Spurs</option>
+												<option value="Toronto Raptors">Toronto Raptors</option>
+												<option value="Utah Jazz">Utah Jazz</option>
+												<option value="Washington Wizards">Washington Wizards</option>
+											</select>
+											<br>
+											Posición:<br>
+											<select class="anchuraMaxima" name="posicion" id="posiciones">
+												<option value="" selected="selected">- Selecciona una posición -</option>
+												<option value="Base">Base</option>
+												<option value="Escolta">Escolta</option>
+												<option value="Alero">Alero</option>
+												<option value="Ala-pivot">Ala-pivot</option>
+												<option value="Pivot">Pivot</option>
+											</select>
+											<br>
+											Edad:<br>
+											<input class="anchuraMaxima" type="text" name="edad" id="edad">
+											<br>
+											Estilo:<br>
+											<select class="anchuraMaxima" name="estilo" id="estilos">
+												<option value="" selected="selected">- Selecciona un estilo de juego -</option>
+												<option value="Anotador">Anotador</option>
+												<option value="Asistente">Asistente</option>
+												<option value="Matador">Matador</option>
+												<option value="Triplista">Triplista</option>
+												<option value="Penetrador">Penetrador</option>
+												<option value="Atletico">Atlético</option>
+												<option value="Todoterreno">Todoterreno</option>
+												<option value="Defensivo">Defensivo</option>
+												<option value="Habilidoso">Habilidoso</option>
+											</select>
+											<br><br>
+											<div class="errores">
+												<p id="nombreVacio" style='display:none;'>[ERROR] El campo Nombre no puede estar vacío.</p>
+												<p id="apellidoVacio" style='display:none;'>[ERROR] El campo Apellido no puede estar vacío.</p>
+												<p id="edadVacio" style='display:none;'>[ERROR] El campo Edad no puede estar vacío.</p>
+												<p id="edadNoNum" style='display:none;'>[ERROR] El valor introducido en el campo Edad no es un valor numérico.</p>
+												<p id="noEquipo" style='display:none;'>[ERROR] No se ha elegido ningún equipo.</p>
+												<p id="noPosicion" style='display:none;'>[ERROR] No se ha elegido ninguna posición.</p>
+												<p id="noEstilo" style='display:none;'>[ERROR] No se ha elegido ningún estilo de juego.</p>
+											</div>
+											<input type="submit" class="button-big botonCentrado" id="submit" value="Enviar">
+										</form>
+									</section>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		<!-- Footer -->
+			<div id="footer-wrapper">
+				<footer id="footer" class="container">
+					<div class="row">
+						<div class="8u">
+						
+							<!-- Links -->
+								<section>
+									<h2>Links relacionados con la NBA</h2>
+									<div>
+										<div class="row">
+											<div class="3u">
+												<ul class="link-list last-child">
+													<li><a href="http://www.nba.com" target="_blank">Página oficial</a></li>
+													<li><a href="http://www.nbastore.eu/stores/nba/default.aspx" target="_blank">Tienda oficial</a></li>
+													<li><a href="http://watch.nba.com/nba/" target="_blank">NBA Tv</a></li>
+													<li><a href="http://es.wikipedia.org/wiki/National_Basketball_Association" target="_blank">Wikipedia NBA</a></li>
+												</ul>
+											</div>
+											<div class="3u">
+												<ul class="link-list last-child">
+													<li><a href="http://www.marca.com/baloncesto/nba.html" target="_blank">Marca NBA</a></li>
+													<li><a href="http://www.espndeportes.com/basquetbol/" target="_blank">ESPN NBA</a></li>
+													<li><a href="http://www.nbamaniacs.com/" target="_blank">NBAManiacs</a></li>
+													<li><a href="http://www.ultimatenba.com/" target="_blank">UltimateNBA</a></li>
+												</ul>
+											</div>
+											<div class="3u">
+												<ul class="link-list last-child">
+													<li><a href="https://twitter.com/nba" target="_blank">Twitter NBA</a></li>
+													<li><a href="https://www.facebook.com/nba" target="_blank">Facebook NBA</a></li>
+													<li><a href="http://instagram.com/nba/" target="_blank">Instagram NBA</a></li>
+													<li><a href="https://www.youtube.com/user/NBA" target="_blank">Youtube NBA</a></li>
+												</ul>
+											</div>
+											<div class="3u">
+												<ul class="link-list last-child">
+													<li><a href="http://www.nike.com/es/es_es/" target="_blank">Nike</a></li>
+													<li><a href="http://www.adidas.es/" target="_blank">Adidas</a></li>
+													<li><a href="http://shop.spalding.com/" target="_blank">Spalding</a></li>
+													<li><a href="http://www.footlocker.com/" target="_blank">Foot Locker</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</section>
+
+						</div>
+						<div class="4u">
+							
+							<!-- About us -->
+								<section>
+									<h2>Un breve texto informativo</h2>
+									<p align="justify">
+										<strong>We Love Basketball</strong> es una iniciativa llevada a cabo por un estudiante de la Universidad de Deusto llamado <strong>Endika Salgueiro</strong>. El objetivo y fin de esta página web es el de disfrutar y conocer un poco más la NBA. A través de esta página, los visitantes podrán acceder a estadístivas individuales de los jugadores, elegir sus jugadores favoritos y ver las valoracines de otros visitantes de una forma ordenada.
+									</p>
+								</section>
+						
+						</div>
+					</div>
+				</footer>
+			</div>
+
+		<!-- Copyright -->
+			<div id="copyright">
+				&copy; EndikaSalgueiro2014. All rights reserved.
+			</div>
+	</body>
+</html>
+
+<!-- Javascript -->
+<script type="text/javascript">
+	
+	function validacion() {
+
+		nom = document.getElementById("nombre").value;
+		nombreVacio = document.getElementById("nombreVacio");
+
+		ape = document.getElementById("apellido").value;
+		apellidoVacio = document.getElementById("apellidoVacio");
+
+		ed = document.getElementById("edad").value;
+		edadVacio = document.getElementById("edadVacio");
+		edadNoNum = document.getElementById("edadNoNum");
+
+		indEq = document.getElementById("equipos").selectedIndex;
+		noEquipo = document.getElementById("noEquipo");
+
+		indPos = document.getElementById("posiciones").selectedIndex;
+		noPosicion = document.getElementById("noPosicion");
+
+		indEst = document.getElementById("estilos").selectedIndex;
+		noEstilo = document.getElementById("noEstilo");
+
+		//Volvemos a ocultar los mensajes de error.
+		nombreVacio.style.display = 'none';
+		apellidoVacio.style.display = 'none';
+		edadVacio.style.display = 'none';
+		edadNoNum.style.display = 'none';
+		noEquipo.style.display = 'none';
+		noPosicion.style.display = 'none';
+		noEstilo.style.display = 'none';
+
+		//Variable de control
+		error = false;
+
+		if (nom == null || nom.length == 0 || /^\s+$/.test(nom)) {
+			// Si el campo Nombre está vacío...
+			nombreVacio.style.display = 'block';
+			error = true;
+		} else if(ape == null || ape.length == 0 || /^\s+$/.test(ape)) {
+			// Si el campo Apellido está vacío...
+			apellidoVacio.style.display = 'block';
+			error = true;
+		} else if(ed == null || ed.length == 0 || /^\s+$/.test(ed)) {
+			// Si el campo Edad está vacío...
+			edadVacio.style.display = 'block';
+			error = true;
+		} else if(isNaN(ed)) {
+			//Si el campo Edad no tiene un valor numérico...
+			edadNoNum.style.display = 'block';
+			error = true;
+		} else if(indEq == null || indEq == 0) {
+			//Si no se ha elegido ningún equipo de la comboBox...
+			noEquipo.style.display = 'block';
+			error = true;
+		} else if(indPos == null || indPos == 0) {
+			//Si no se ha elegido posición de la comboBox...
+			noPosicion.style.display = 'block';
+			error = true;
+		} else if(indEst == null || indEst == 0) {
+			//Si no se ha elegido ningún estilo de juego de la comboBox...
+			noEstilo.style.display = 'block';
+			error = true;
+		}
+
+		if(error == true) {
+			return false;
+		} else {
+			/* Si el script ha llegado a este punto, todas las condiciones
+			se han cumplido, por lo que se devuelve el valor true */
+			return true;
+		}
+	}
+</script>
